@@ -1,3 +1,4 @@
+<br>
 <div align="center">
 
 ![Logo](<readmeassets/Main Logo.png>)
@@ -8,6 +9,10 @@ A brazillian platform that joins data all in <b>one</b> place.
 Dashboards, researches, thoughts, feelings, you can find all of this <b>here</b>
 
 <img src="https://img.shields.io/badge/Status-In_Development-057CDC?logo=devbox&logoColor=white">
+<img src="https://img.shields.io/badge/PoweredBy-Vita-AC66ED?logo=vite&logoColor=white">
+<img src="https://img.shields.io/badge/Framework-Vue.js-4FC08D?logo=vuedotjs&logoColor=white">
+<img src="https://img.shields.io/badge/Data%20Analysis-Python-3776AB?logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Language-JavaScript-F7DF1E?logo=javascript&logoColor=white">
 
 </div>
 
@@ -63,4 +68,5 @@ We will also develop our own API for data collection, to make it easier for peop
 
 This is a Open-Source project, and under the MIT license, which means you can contribute however you want, but remember to give credit to the creators of this project when redistributing
 
+> [!WARNING]
 >  If you are going to use one of our data API, we recommend you to generate your own api token and provide it to our application, so you can get the data from our application without having to use the social media API directly.
