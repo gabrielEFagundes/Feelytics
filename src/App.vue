@@ -1,30 +1,37 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+  import Navbar from './components/Navbar.vue';
+  import TextWrapper from './widgets/TextWrapper.vue';
+  import Grid from './components/Grid.vue';
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Navbar />
+  <section>
+    <div class="flex items-center flex-col mt-[10rem] gap-2">
+      <h1 class="text-6xl">Feely<span class="logoColor">tics</span></h1>
+      <p>How you <span class="mainColor">feeling</span>?</p>
+    </div>
+    <TextWrapper msg="The best of data, all in one place" />
+  </section>
+  <section>
+    <div class="flex items-center flex-col mt-[10rem] gap-2">
+      <h3 class="text-6xl">Why <span class="mainColor">us</span>?</h3>
+    </div>
+    <TextWrapper msg="
+    We believe that data shouldn’t be paid, data should be free, especially when talking about researches and statistics.
+
+    On our platform, you can find data from social media, without having to do additional researches or even building a API for yourself.
+
+    We also offer our own API, with data already formatted and usable, powered by AI for you to use.
+
+    " />
+  </section>
+  <section>
+    <div class="flex items-center flex-col mt-[10rem] gap-2">
+      <h3 class="text-6xl">Who we <span class="mainColor">are</span>:</h3>
+    </div>
+    <Grid />
+  </section>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>
