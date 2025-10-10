@@ -1,42 +1,25 @@
-<script>
-
+<script setup>
+  import Card from '../widgets/Card.vue';
 </script>
 
 <template>
-    <div class="grid grid-cols-3 justify-items-center mt-[5rem]">
-        <div class="bg-neutral-900 p-3 rounded-xl">
-            <div>
-                <img src="" alt="Luis Felipe Flores Olegar">
-            </div>
-            <div>
-                <p>Luis Felipe Flores Olegar</p>
-                <sub class="text-gray-500">Developer & Design Analyst</sub>
-                <p class="mt-7">Biografy</p>
-            </div>
-        </div>
-        <div class="bg-neutral-900 p-3 rounded-xl">
-            <div>
-                <img src="" alt="Gabriel Ehrat Fagundes">
-            </div>
-            <div>
-                <p>Gabriel Ehrat Fagundes</p>
-                <sub class="text-gray-500">Lead Developer & Designer</sub>
-                <p class="mt-7">Biografy</p>
-            </div>
-        </div>
-        <div class="bg-neutral-900 p-3 rounded-xl">
-            <div>
-                <img src="" alt="Renan Ballock">
-            </div>
-            <div>
-                <p>Renan Guilherme Ballock</p>
-                <sub class="text-gray-500">Data Analyst & System Analyst</sub>
-                <p class="mt-7">Biografy</p>
-            </div>
-        </div>
+    <div class="grid grid-cols-3 justify-items-center mt-[5rem] gap-[5rem]">
+        <Card img="https://avatars.githubusercontent.com/u/216910125?v=4" 
+        name="Luís Felipe Flores Olegar" 
+        role="Developer & Design Analyst"
+        biografy="Hi! I am Luís, I'm 18 years old and I chose this field because I want to gain enough knowledge to create a game."
+        github="https://github.com/renanballock" />
+        
+        <Card img="https://avatars.githubusercontent.com/u/185841300?v=4"
+        name="Gabriel Ehrat Fagundes"
+        role="Lead Developer & Designer"
+        biografy="Hey, I'm Gabriel, a passionate and maddend programmer that loves technology and innovation. I'm leading this awesome group!"
+        github="https://github.com/gabrielEFagundes" />
+        
+        <Card img="https://avatars.githubusercontent.com/u/213849483?v=4"
+        name="Renan Guilherme Ballock"
+        role="Data Analyst & System Analyst"
+        biografy="Hello! My name is Renan, I love technologies and am a very curious person. I'm working on keeping the data and system safe!"
+        github="https://github.com/olegar724" />
     </div>
 </template>
-
-<style>
-
-</style>

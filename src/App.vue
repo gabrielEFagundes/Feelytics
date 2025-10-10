@@ -2,6 +2,7 @@
   import Navbar from './components/Navbar.vue';
   import TextWrapper from './widgets/TextWrapper.vue';
   import Grid from './components/Grid.vue';
+  import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -30,7 +31,12 @@
     <div class="flex items-center flex-col mt-[10rem] gap-2">
       <h3 class="text-6xl">Who we <span class="mainColor">are</span>:</h3>
     </div>
-    <Grid />
+    <div class="flex justify-center">
+      <Grid />
+    </div>
+  </section>
+  <section class="mt-[20rem]">
+    <Footer />
   </section>
 </template>
 

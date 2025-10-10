@@ -1,7 +1,3 @@
-<script>
-    // TODO: maybe add this thingy where the transition is smoother for the social medias
-</script>
-
 <template>
     <section class="flex justify-evenly items-center mt-10 mb-2">
         <div>
