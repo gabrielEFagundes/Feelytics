@@ -8,7 +8,7 @@
         name="Luís Felipe Flores Olegar" 
         role="Developer & Design Analyst"
         biografy="Hi! I am Luís, I'm 18 years old and I chose this field because I want to gain enough knowledge to create a game."
-        github="https://github.com/renanballock" />
+        github="https://github.com/olegar724" />
         
         <Card img="https://avatars.githubusercontent.com/u/185841300?v=4"
         name="Gabriel Ehrat Fagundes"
@@ -20,6 +20,6 @@
         name="Renan Guilherme Ballock"
         role="Data Analyst & System Analyst"
         biografy="Hello! My name is Renan, I love technologies and am a very curious person. I'm working on keeping the data and system safe!"
-        github="https://github.com/olegar724" />
+        github="https://github.com/renanballock" />
     </div>
 </template>

@@ -17,9 +17,9 @@
                 <p>{{ name }}</p>
                 <sub class="text-gray-500">{{role}}</sub>
                 <p class="mt-7 text-xs text-gray-300 max-w-[17rem] leading-3.9">{{biografy}}</p>
-                <a :href="github">
-                    <img src="/github_word.png?url" alt="Github Link" class="w-[3rem] mt-4">
-                </a>
+            </div>
+            <div class="p-3">
+                <a :href="github" class="font-black mt-7">GitHub</a>
             </div>
         </div>
 </template>
