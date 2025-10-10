@@ -1,8 +1,8 @@
 <script setup>
-  import Navbar from './components/Navbar.vue';
-  import TextWrapper from './widgets/TextWrapper.vue';
-  import Grid from './components/Grid.vue';
-  import Footer from './components/Footer.vue';
+  import Navbar from '../../components/Navbar.vue';
+  import TextWrapper from '../../widgets/TextWrapper.vue';
+  import Grid from '../../components/Grid.vue';
+  import Footer from '../../components/Footer.vue';
 </script>
 
 <template>
@@ -18,7 +18,7 @@
     <div class="flex items-center flex-col mt-[10rem] gap-2">
       <h3 class="text-6xl">Why <span class="mainColor">us</span>?</h3>
     </div>
-    <TextWrapper msg="
+    <TextWrapper msg="  
     We believe that data shouldn’t be paid, data should be free, especially when talking about researches and statistics.
 
     On our platform, you can find data from social media, without having to do additional researches or even building a API for yourself.

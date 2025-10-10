@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <template>
     <div class="boxShadow rounded-t-xl flex justify-between items-center py-[5rem] px-[10rem]">
         <div class="text-center">
