@@ -13,7 +13,7 @@
         <Card img="https://avatars.githubusercontent.com/u/185841300?v=4"
         name="Gabriel Ehrat Fagundes"
         role="Lead Developer & Designer"
-        biografy="Hey, I'm Gabriel, a passionate and maddend programmer that loves technology and innovation. I'm leading this awesome group!"
+        biografy="Hey, I'm Gabriel, a passionate and maddend programmer that loves technology and innovation. I'm leading this awesome team!"
         github="https://github.com/gabrielEFagundes" />
         
         <Card img="https://avatars.githubusercontent.com/u/213849483?v=4"
