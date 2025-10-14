@@ -47,7 +47,7 @@ We will also develop our own API for data collection, to make it easier for peop
 <table align="center">
   <tr>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/424443?v=4" width="100" alt="Luis" /><br/>
+      <img src="https://avatars.githubusercontent.com/u/216910125?v=4" width="100" alt="Luis" /><br/>
       <strong>Luis Felipe Flores Olegar</strong><br/>
       <sub>Developer & Design Analyst</sub>
     </td>
