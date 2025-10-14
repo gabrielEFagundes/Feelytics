@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <template>
     <div class="boxShadow rounded-t-xl flex justify-between items-center py-[5rem] px-[10rem]">
         <div class="text-center">
@@ -11,7 +7,7 @@
         <div>
             <div class="grid grid-cols-3 grid-rows-2 place-items-center gap-3">
                 <a href="mailto:gabriel_e_fagundes@estudante.sesisenai.org.br" class="text-sm">Contact Us</a>
-                <a href="#" class="text-sm">Privacy Policy</a>
+                <a href="/privacy" class="text-sm">Privacy Policy</a>
                 <a href="#" class="text-sm">Terms of Use</a>
                 <div class="col-span-3">
                     <a href="https://github.com/gabrielEFagundes/Feelytics">
