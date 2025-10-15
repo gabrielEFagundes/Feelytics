@@ -16,7 +16,7 @@
             </ul>
         </div>
         <div>
-            <a href="#" class="selection">Username</a>
+            <a href="/auth" class="selection">Username</a>
         </div>
     </section>
     <div class="flex justify-center">
