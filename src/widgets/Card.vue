@@ -19,7 +19,7 @@
                 <p class="mt-7 text-xs text-gray-300 max-w-[17rem] leading-3.9">{{biografy}}</p>
             </div>
             <div class="p-3">
-                <a :href="github" class="font-black mt-7">GitHub</a>
+                <a :href="github" target="_blank" class="font-black mt-7">GitHub</a>
             </div>
         </div>
 </template>

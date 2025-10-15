@@ -1,7 +1,7 @@
 <template>
     <section class="flex justify-evenly items-center mt-10 mb-2">
-        <div>
-            <a href="#" class="font-size-md">🌀</a>
+        <div class="logo">
+            <a href="/home" class="font-size-md">🌀</a>
         </div>
         <div>
             <ul class="flex gap-[1.5rem]">
@@ -25,6 +25,12 @@
 </template>
 
 <style scoped>
+.logo{
+    transition: all 0.3s ease-in-out;
+}
+.logo:hover{
+    transform: scale(1.2);
+}
 .font-size-md{
     font-size: 1.5rem;
 }

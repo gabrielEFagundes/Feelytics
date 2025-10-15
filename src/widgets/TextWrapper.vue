@@ -7,7 +7,7 @@ defineProps({
 <template>
     <div class="flex justify-center mt-[5rem]">
         <div class="flex boxShadow py-4 px-8 rounded-xl">
-            <p class="text-sm max-w-[33rem] whiteSpace">{{msg}}</p>
+            <p class="text-sm max-w-[33rem] whiteSpace">{{msg}} <slot /></p>
         </div>
     </div>
 </template>

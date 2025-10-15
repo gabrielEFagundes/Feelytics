@@ -12,3 +12,9 @@ export default {
         <router-link to="/policy">Privacy Policy</router-link>
     </nav>
 </template>
+
+<style>
+    nav{
+        display: none;
+    }
+</style>
