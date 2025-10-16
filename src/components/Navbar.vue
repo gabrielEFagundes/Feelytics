@@ -1,3 +1,22 @@
+<script setup>
+  import firebase from 'firebase/compat/app';
+  import { onBeforeUnmount } from 'vue';
+  import { ref } from 'vue';
+
+  const isLoggedIn = ref(false);
+  const loggedUser = ref();
+  const authListener = firebase.auth().onAuthStateChanged(function(user) {
+    if(user){
+        loggedUser.value = user;
+        isLoggedIn.value = true;
+    }
+  })
+
+  onBeforeUnmount(() => {
+    authListener();
+  })
+</script>
+
 <template>
     <section class="flex justify-evenly items-center mt-10 mb-2">
         <div class="logo">
@@ -16,7 +35,8 @@
             </ul>
         </div>
         <div>
-            <a href="/auth" class="selection">Username</a>
+            <span v-if="isLoggedIn"><a href="/user" class="selection">Hello!</a></span>
+            <span v-else><a href="/auth" class="selection">Register</a></span>
         </div>
     </section>
     <div class="flex justify-center">

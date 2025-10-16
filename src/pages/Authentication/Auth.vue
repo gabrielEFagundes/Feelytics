@@ -27,6 +27,7 @@
 button{
   cursor: pointer;
   border-top: 2px solid #181818;
+  box-shadow: 0px 7px 6px #181818 inset;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   padding: 0.5rem 2rem;

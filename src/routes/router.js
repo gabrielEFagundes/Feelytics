@@ -8,7 +8,9 @@ const routes = [
     { path: '/', component: Home },
     { path: '/home', component: Home },
     { path: '/policy', component: PrivacyPol },
-    { path: '/auth', component: Authentication },
+    { path: '/auth', component: Authentication, props: true },
+    //{ path: '/auth/login', component: Authentication, props: true },
+    //{ path: '/auth/signin', component: Authentication, props: true },
 ]
 
 export const router = createRouter({
