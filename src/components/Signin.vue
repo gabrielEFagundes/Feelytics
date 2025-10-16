@@ -3,8 +3,10 @@
   import firebase from 'firebase/compat/app';
   import { useRouter } from 'vue-router';
   import { useFirestore } from 'vuefire';	
-  import { addDoc, collection } from 'firebase/firestore';
+  import { setDoc, doc } from 'firebase/firestore';
+  import { db } from '../main.js';
   import Warning from '../widgets/Warning.vue';
+  import { hashPass } from '../utils/passwordHash.js';
 
   const firestore = useFirestore();
 
@@ -14,6 +16,8 @@
 
   const err = ref();
   const router = useRouter();
+
+  let userUid;
 
   const signin = () => {
     firebase.auth().createUserWithEmailAndPassword(email.value, passcode.value)
@@ -26,6 +30,7 @@
             .catch((error) => {
               err.value = "Something went wrong!";
             })
+            userUid = user.uid;
           }
         })
       })
@@ -52,10 +57,10 @@
 
   async function addToFirestore(username, email, passcode){
     try{
-      await addDoc(collection(firestore, 'users'), {
+      await setDoc(doc(db, 'users', userUid.toString()), {
         username: username,
         email: email,
-        passcode: passcode
+        passcode: hashPass(passcode)
       });
     } catch(e){
       console.log("Something happend on our side and your account could not be saved on our database: ", e);

@@ -19,7 +19,7 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
+export const db = getFirestore(app);
 export const todosRef = collection(db, 'todos');
 
 createApp(App).use(router).use(VueFire, { app }).mount('#app')
