@@ -1,7 +1,7 @@
 <script setup>
   import{ ref } from 'vue'
-  import Login from '../../widgets/Login.vue';
-  import Signin from '../../widgets/Signin.vue';
+  import Login from '../../components/Login.vue';
+  import Signin from '../../components/Signin.vue';
 
   const tabs = {
     Login,

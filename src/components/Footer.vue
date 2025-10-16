@@ -1,3 +1,25 @@
+<script setup>
+  import firebase from 'firebase/compat/app';
+
+  const user = firebase.auth().currentUser;
+
+  function deleteAccount() {
+      if(confirm("Are you sure you want to delete your account? This action is irreversible. Click again to confirm.")){
+        user.delete()
+        .then(() => {
+            alert("Account deleted successfully.");
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+      }
+  }
+
+  function askForLogin(){
+    alert("Please, log into your account to delete it. Or relog in if you are already logged in.");
+  }
+</script>
+
 <template>
     <div class="boxShadow rounded-t-xl flex justify-between items-center py-[5rem] px-[10rem]">
         <div class="text-center">
@@ -5,11 +27,13 @@
             <sub><span class="text-red-700">MIT</span> 2025 - Please give us some credit!</sub>
         </div>
         <div>
-            <div class="grid grid-cols-3 grid-rows-2 place-items-center gap-3">
+            <div class="grid grid-cols-4 grid-rows-2 place-items-center gap-3">
                 <a href="mailto:gabriel_e_fagundes@estudante.sesisenai.org.br" class="text-sm">Contact Us</a>
                 <a href="/policy" class="text-sm">Privacy Policy</a>
                 <a href="#" class="text-sm">Terms of Use</a>
-                <div class="col-span-3">
+                <button v-if="user != null" @click="deleteAccount" class="text-sm text-red-500 cursor-pointer">Delete Account</button>
+                <button v-else @click="askForLogin" class="text-sm text-red-500 cursor-pointer">Delete Account</button>
+                <div class="col-span-4">
                     <a href="https://github.com/gabrielEFagundes/Feelytics">
                         <img src="/github.svg?url" alt="Github Icon" class="w-[1.5rem] mt-3">
                     </a>

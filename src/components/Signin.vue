@@ -2,6 +2,11 @@
   import { ref } from 'vue';
   import firebase from 'firebase/compat/app';
   import { useRouter } from 'vue-router';
+  import { useFirestore } from 'vuefire';	
+  import { addDoc, collection } from 'firebase/firestore';
+  import Warning from '../widgets/Warning.vue';
+
+  const firestore = useFirestore();
 
   const username = ref('');
   const email = ref('');
@@ -25,12 +30,17 @@
         })
       })
       .then((data) => {
+        addToFirestore(username.value, email.value, passcode.value);
         router.push('/home');
       })
       .catch((error) => {
-        switch(error){
+        switch(error.code){
           case 'auth/invalid-email':
             err.value = "Your email is invalid!";
+            break;
+
+          case 'auth/weak-password':
+            err.value = "Your password must contain at least 6 characters.";
             break;
 
           default:
@@ -38,6 +48,18 @@
             break;
         }
       })
+  }
+
+  async function addToFirestore(username, email, passcode){
+    try{
+      await addDoc(collection(firestore, 'users'), {
+        username: username,
+        email: email,
+        passcode: passcode
+      });
+    } catch(e){
+      console.log("Something happend on our side and your account could not be saved on our database: ", e);
+    }
   }
 </script>
 
@@ -61,8 +83,8 @@
               <a href="/home" class="text-xs">↩ Back to Home</a>
             </div>
         </div>
-        <p class="mt-3 text-red-400" v-if="err">{{ err }}</p>
     </div>
+    <Warning v-if="err != null" :err="err" />
 </template>
 
 <style scoped>

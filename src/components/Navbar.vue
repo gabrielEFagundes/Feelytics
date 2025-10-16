@@ -15,6 +15,16 @@
   onBeforeUnmount(() => {
     authListener();
   })
+
+  function signOut(){
+    firebase.auth().signOut()
+        .then(() => {
+            isLoggedIn.value = false;
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
+  }
 </script>
 
 <template>
@@ -35,7 +45,7 @@
             </ul>
         </div>
         <div>
-            <span v-if="isLoggedIn"><a href="/user" class="selection">Hello!</a></span>
+            <span v-if="isLoggedIn"><button @click="signOut" class="selection text-red-500 cursor-pointer">Logout</button></span>
             <span v-else><a href="/auth" class="selection">Register</a></span>
         </div>
     </section>

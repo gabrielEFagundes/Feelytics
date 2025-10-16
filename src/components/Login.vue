@@ -2,6 +2,7 @@
   import { ref } from 'vue'
   import firebase from 'firebase/compat/app';
   import { useRouter } from 'vue-router';
+  import Warning from '../widgets/Warning.vue';
 
   const email = ref('');
   const passcode = ref('');
@@ -53,8 +54,8 @@
               <a href="/home" class="text-xs">↩ Back to Home</a>
             </div>
         </div>
-        <p class="mt-3 text-red-400" v-if="err">{{ err }}</p>
     </div>
+    <Warning v-if="err != null" :err="err" />
 </template>
 
 <style scoped>
