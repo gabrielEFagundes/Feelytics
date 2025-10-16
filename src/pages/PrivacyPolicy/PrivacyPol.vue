@@ -18,7 +18,13 @@
 
             All data collected and fetched by AI is NOT stored on any of our databases, the ONLY data we store are the topics you search for.
             
-            "></TextWrapper>
+            " />
+            <TextWrapper msg="
+            The only reason we ask for your login is so we can have more precision on the datasets we create for our own application!
+
+            Login is NOT necessary, but it helps us a lot!
+
+            " />
         </div>
         <div class="flex flex-col items-center my-[6rem]">
             <h1 class="text-5xl text-center">Your country<br><span class="mainColor">Your policy</span></h1>
@@ -27,8 +33,7 @@
 
             If you want to learn more about the policies of your country, please check out the page below and search for your country.
             
-            ">
-            </TextWrapper>
+            " />
 
             <LiquidBtn link="https://www.dlapiperdataprotection.com/" msg="Data Protection Laws of the World" class="mt-[2rem]"/>
         </div>

@@ -1,12 +1,16 @@
 <script setup>
   defineProps({
       link: String,
-      msg: String
+      msg: String,
+      event: {
+        type: String,
+        default: null
+      },
   })
 </script>
 
 <template>
-    <button class="p-[0.5rem] rounded-xl">
+    <button class="p-[0.5rem] rounded-xl" @click="$emit(event)">
         <a :href="link" target="_blank">{{ msg }}</a>
     </button>
 </template>
