@@ -1,9 +1,11 @@
 <script setup>
   import firebase from 'firebase/compat/app';
+  import { deleteDoc, doc } from 'firebase/firestore';
+  import { db } from '../main.js';
 
   const user = firebase.auth().currentUser;
 
-  function deleteAccount() {
+  async function deleteAccount() {
       if(confirm("Are you sure you want to delete your account? This action is irreversible. Click again to confirm.")){
         user.delete()
         .then(() => {
@@ -12,6 +14,8 @@
         .catch((error) => {
             console.log(error);
         })
+        
+        await deleteDoc(doc(db, 'users', user.uid));
       }
   }
 
