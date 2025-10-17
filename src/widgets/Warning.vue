@@ -1,7 +1,7 @@
 <script setup>
-  defineProps({
-    err: String
-  })
+    defineProps({
+      err: String
+    })
 </script>
 
 <template>

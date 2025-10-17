@@ -1,13 +1,13 @@
 <script setup>
-  import Navbar from '../../components/Navbar.vue';
-  import Footer from '../../components/Footer.vue';
-  import TextWrapper from '../../widgets/TextWrapper.vue';
-  import LiquidBtn from '../../widgets/LiquidBtn.vue';
+    import Navbar from '../../components/Navbar.vue';
+    import Footer from '../../components/Footer.vue';
+    import TextWrapper from '../../widgets/TextWrapper.vue';
+    import LiquidBtn from '../../widgets/LiquidBtn.vue';
 </script>
 
 <template>
     <Navbar />
-    <main>
+    <main class="p-5">
         <div class="flex flex-col items-center my-[5rem]">
             <h1 class="text-6xl">Our <span class="mainColor">Policy</span></h1>
             <TextWrapper msg="
@@ -38,7 +38,7 @@
             <LiquidBtn link="https://www.dlapiperdataprotection.com/" msg="Data Protection Laws of the World" class="mt-[2rem]"/>
         </div>
         <div class="flex flex-col items-center my-[5rem]">
-            <h1 class="text-6xl">Our <span class="mainColor">License</span></h1>
+            <h1 class="text-6xl text-center">Our <span class="mainColor">License</span></h1>
             <TextWrapper msg="
             This entire project is under the MIT license, and the only thing we ask is to give us some credit if you use any part of this project.
 
@@ -52,7 +52,3 @@
     </main>
     <Footer />
 </template>
-
-<style>
-
-</style>

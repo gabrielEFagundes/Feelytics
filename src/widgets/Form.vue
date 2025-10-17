@@ -1,7 +1,7 @@
 <script setup>
-  defineProps({
-    title: String,
-  })
+    defineProps({
+      title: String,
+    })
 </script>
 
 <template>
@@ -19,42 +19,38 @@
 </template>
 
 <style>
-.boxShadow{
-    box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 70px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
+    .formGroup{
+      position: relative;
+      padding: 15px 0 0;
+      margin-top: 0.7rem;
+    }
 
-.formGroup{
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 0.7rem;
-}
+    .label{
+      position: absolute;
+      top: 2rem;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: #9e9e9e;
+    }
 
-.label{
-  position: absolute;
-  top: 2rem;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #9e9e9e;
-}
+    .field{
+      font-family: inherit;
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid #535353;
+      outline: 0;
+      font-size: 1.3rem;
+      padding: 7px 0;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
 
-.field{
-  font-family: inherit;
-  width: 100%;
-  border: 0;
-  border-bottom: 2px solid #535353;
-  outline: 0;
-  font-size: 1.3rem;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-}
-
-.field:focus{
-  ~ .label{
-    top: -1rem;
-    font-size: 0.8rem;
-    color: #5B94FF;
-  }
-}
+    .field:focus{
+      ~ .label{
+        top: -1rem;
+        font-size: 0.8rem;
+        color: #5B94FF;
+      }
+    }
 </style>

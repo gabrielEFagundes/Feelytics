@@ -1,9 +1,9 @@
 <script setup>
-  import Card from '../widgets/Card.vue';
+    import Card from '../widgets/Card.vue';
 </script>
 
 <template>
-    <div class="grid grid-cols-3 justify-items-center mt-[5rem] gap-[5rem]">
+    <div class="grid lg:grid-cols-3 justify-items-center mt-[5rem] gap-[5rem]">
         <Card img="https://avatars.githubusercontent.com/u/216910125?v=4" 
         name="Luís Felipe Flores Olegar" 
         role="Developer & Design Analyst"
