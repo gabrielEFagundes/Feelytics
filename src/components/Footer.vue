@@ -25,7 +25,7 @@
 </script>
 
 <template>
-    <div class="boxShadow rounded-t-xl flex justify-between items-center py-[5rem] px-[2rem] md:px-[10rem] lg:px-[10rem]">
+    <div class="boxShadow rounded-t-xl flex flex-col gap-[3rem] justify-between items-center py-[5rem] px-[2rem] md:px-[10rem] md:flex-row lg:px-[10rem] lg:flex-row">
         <div class="text-center">
             <h3 class="lg:text-4xl text-xl">🌀Feely<span class="logoColor">tics</span></h3>
             <sub class="hidden lg:inline"><span class="text-red-700">MIT</span> 2025 - Please give us some credit!</sub>

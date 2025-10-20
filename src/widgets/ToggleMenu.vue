@@ -3,6 +3,14 @@
         document.getElementById('menu')
             .classList.toggle('showing');
     }
+
+    document.addEventListener('click', function(event){
+        const menu = document.getElementById('menu');
+        const button = event.target;
+        if(!menu.contains(event.target) && button.textContent !== '+'){
+            menu.classList.remove('showing');
+        }
+    });
 </script>
 
 <template>
