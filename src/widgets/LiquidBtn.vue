@@ -2,15 +2,11 @@
     defineProps({
         link: String,
         msg: String,
-        event: {
-        type: String,
-        default: null
-        },
     })
 </script>
 
 <template>
-    <button class="p-[0.5rem] rounded-xl" @click="$emit(event)">
+    <button class="p-[0.5rem] rounded-xl">
         <a :href="link" target="_blank">{{ msg }}</a>
     </button>
 </template>
