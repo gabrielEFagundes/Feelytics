@@ -1,7 +1,7 @@
 <script>
-export default {
-    name: 'App'
-}
+    export default {
+        name: 'App'
+    }
 </script>
 
 <template>
@@ -11,6 +11,7 @@ export default {
         <router-link to="/">Home</router-link>
         <router-link to="/policy">Privacy Policy</router-link>
         <router-link to="/auth">Login</router-link>
+        <router-link to="/terms">Terms</router-link>
     </nav>
 </template>
 

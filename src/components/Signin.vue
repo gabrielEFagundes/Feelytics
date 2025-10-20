@@ -1,76 +1,76 @@
 <script setup>
-  import { ref } from 'vue';
-  import firebase from 'firebase/compat/app';
-  import { useRouter } from 'vue-router';
-  import { useFirestore } from 'vuefire';	
-  import { setDoc, doc } from 'firebase/firestore';
-  import { db } from '../main.js';
-  import Warning from '../widgets/Warning.vue';
-  import { hashPass } from '../utils/passwordHash.js';
+    import { ref } from 'vue';
+    import firebase from 'firebase/compat/app';
+    import { useRouter } from 'vue-router';
+    import { useFirestore } from 'vuefire';	
+    import { setDoc, doc } from 'firebase/firestore';
+    import { db } from '../main.js';
+    import Warning from '../widgets/Warning.vue';
+    import { hashPass } from '../utils/passwordHash.js';
 
-  const firestore = useFirestore();
+    const firestore = useFirestore();
 
-  const username = ref('');
-  const email = ref('');
-  const passcode = ref('');
+    const username = ref('');
+    const email = ref('');
+    const passcode = ref('');
 
-  const err = ref();
-  const router = useRouter();
+    const err = ref();
+    const router = useRouter();
 
-  let userUid;
+    let userUid;
 
-  const signin = () => {
-    firebase.auth().createUserWithEmailAndPassword(email.value, passcode.value)
-      .then(() => {
-        firebase.auth().onAuthStateChanged((user) => {
-          if(user){
-            user.updateProfile({
-              displayName: username.value
-            })
-            .catch((error) => {
-              err.value = "Something went wrong!";
-            })
-            userUid = user.uid;
+    const signin = () => {
+      firebase.auth().createUserWithEmailAndPassword(email.value, passcode.value)
+        .then(() => {
+          firebase.auth().onAuthStateChanged((user) => {
+            if(user){
+              user.updateProfile({
+                displayName: username.value
+              })
+              .catch((error) => {
+                err.value = "Something went wrong!";
+              })
+              userUid = user.uid;
+            }
+          })
+        })
+        .then((data) => {
+          addToFirestore(username.value, email.value, passcode.value);
+          router.push('/home');
+        })
+        .catch((error) => {
+          switch(error.code){
+            case 'auth/invalid-email':
+              err.value = "Your email is invalid!";
+              break;
+
+            case 'auth/weak-password':
+              err.value = "Your password must contain at least 6 characters.";
+              break;
+
+            default:
+              err.value = "Check out for your infos and try again.";
+              break;
           }
         })
-      })
-      .then((data) => {
-        addToFirestore(username.value, email.value, passcode.value);
-        router.push('/home');
-      })
-      .catch((error) => {
-        switch(error.code){
-          case 'auth/invalid-email':
-            err.value = "Your email is invalid!";
-            break;
-
-          case 'auth/weak-password':
-            err.value = "Your password must contain at least 6 characters.";
-            break;
-
-          default:
-            err.value = "Check out for your infos and try again.";
-            break;
-        }
-      })
-  }
-
-  async function addToFirestore(username, email, passcode){
-    try{
-      await setDoc(doc(db, 'users', userUid.toString()), {
-        username: username,
-        email: email,
-        passcode: hashPass(passcode)
-      });
-    } catch(e){
-      console.log("Something happend on our side and your account could not be saved on our database: ", e);
     }
-  }
+
+    async function addToFirestore(username, email, passcode){
+      try{
+        await setDoc(doc(db, 'users', userUid.toString()), {
+          username: username,
+          email: email,
+          passcode: hashPass(passcode)
+        });
+      } catch(e){
+        console.log("Something happend on our side and your account could not be saved on our database: ", e);
+      }
+    }
 </script>
 
 <template>
     <div class="flex flex-col items-center tab">
-        <div class="boxShadow px-[10rem] py-[2.5rem] rounded-2xl text-center">
+        <div class="boxShadow px-[4rem] lg:px-[10rem] py-[2.5rem] rounded-2xl text-center">
             <h3 class="text-xl">Sign a new account</h3>
             <div class="mt-[2rem]">
               <div>
@@ -93,71 +93,71 @@
 </template>
 
 <style scoped>
-a{
-  color: #535353;
-  transition: color 0.3s ease-in-out;
-}
+    a{
+      color: #535353;
+      transition: color 0.3s ease-in-out;
+    }
 
-a:hover{
-  color: #5B94FF;
-}
+    a:hover{
+      color: #5B94FF;
+    }
 
-.boxShadow{
-    box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 70px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
+    .boxShadow{
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 70px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
 
-.field{
-    background: #000;
-    border: 2px solid #181818;
-    padding: 10px;
-    width: 100%;
-    color: white;
-    font-size: 0.8rem;
-    border-radius: 2rem;
-}
+    .field{
+        background: #000;
+        border: 2px solid #181818;
+        padding: 10px;
+        width: 100%;
+        color: white;
+        font-size: 0.8rem;
+        border-radius: 2rem;
+    }
 
-.field:focus{
-  background: 
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(to right, #8fb6ff, #3179ff) border-box;
-  color: #313149;
-  padding: 10px;
-  border: 2px solid transparent;
-  border-radius: 2rem;
-  outline: none;
-  color: white;
-  transition: all 0.3s ease-in-out;
-}
+    .field:focus{
+      background: 
+        linear-gradient(#000 0 0) padding-box,
+        linear-gradient(to right, #8fb6ff, #3179ff) border-box;
+      color: #313149;
+      padding: 10px;
+      border: 2px solid transparent;
+      border-radius: 2rem;
+      outline: none;
+      color: white;
+      transition: all 0.3s ease-in-out;
+    }
 
-.field:valid{
-  background: 
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(to right, #8fffb4, #31ff87) border-box;
-  color: #313149;
-  padding: 10px;
-  border: 2px solid transparent;
-  border-radius: 2rem;
-  outline: none;
-  color: white;
-  transition: all 0.3s ease-in-out;
-}
+    .field:valid{
+      background: 
+        linear-gradient(#000 0 0) padding-box,
+        linear-gradient(to right, #8fffb4, #31ff87) border-box;
+      color: #313149;
+      padding: 10px;
+      border: 2px solid transparent;
+      border-radius: 2rem;
+      outline: none;
+      color: white;
+      transition: all 0.3s ease-in-out;
+    }
 
-.submit{
-  cursor: pointer;
-  padding: 0.6rem 2rem;
-  border-radius: 2rem;
-  border: 2px solid #181818;
-}
+    .submit{
+      cursor: pointer;
+      padding: 0.6rem 2rem;
+      border-radius: 2rem;
+      border: 2px solid #181818;
+    }
 
-.submit:hover{
-  background: 
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(to right, #8fb6ff, #3179ff) border-box;
-  color: #313149;
-  border: 2px solid transparent;
-  border-radius: 2rem;
-  outline: none;
-  color: white;
-  transition: all 0.3s ease-in-out;
-}
+    .submit:hover{
+      background: 
+        linear-gradient(#000 0 0) padding-box,
+        linear-gradient(to right, #8fb6ff, #3179ff) border-box;
+      color: #313149;
+      border: 2px solid transparent;
+      border-radius: 2rem;
+      outline: none;
+      color: white;
+      transition: all 0.3s ease-in-out;
+    }
 </style>
