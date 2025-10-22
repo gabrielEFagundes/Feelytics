@@ -42,5 +42,3 @@ def getRedditData():
 def turnDataIntoJson(data):
     jsObject = json.dumps(data)
     print(jsObject)
-
-turnDataIntoJson(getRedditData())
