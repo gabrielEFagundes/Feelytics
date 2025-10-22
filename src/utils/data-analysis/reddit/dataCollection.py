@@ -1,4 +1,4 @@
-from redditClient import Client
+from .redditClient import Client
 import json
 
 def getRedditData():
@@ -11,11 +11,10 @@ def getRedditData():
     userClient = client.defineClient()
     sub = client.defineSubreddit(userClient)
 
-    cont = 0
     data = []
     comments = []
 
-    for i in sub.top(limit=1): # one's just for testing, our goal here is at least 50 to 100
+    for i in sub.top(limit=10):
         data.append({
             "title": i.title,
             "author": i.author.name if i.author else "Unknown",
@@ -24,9 +23,9 @@ def getRedditData():
         })
 
         if i.num_comments > 0:
-            i.comments.replace_more(limit=5)
-            for comm in i.comments.list():
-                cont += 1
+            i.comments.replace_more(limit=0)
+            for comm in i.comments.list()[:50]:
+                cont = len(comments) + 1
                 name = f"comment{cont}"
                 comments.append({
                     name: {
@@ -41,4 +40,4 @@ def getRedditData():
 
 def turnDataIntoJson(data):
     jsObject = json.dumps(data)
-    print(jsObject)
+    return jsObject
