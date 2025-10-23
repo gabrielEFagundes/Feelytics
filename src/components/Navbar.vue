@@ -36,7 +36,7 @@
         </div>
         <div>
             <ul class="lg:flex hidden gap-[1.5rem]">
-                <a href="#" class="reddit">Reddit</a>
+                <a href="/dashboards/reddit" class="reddit">Reddit</a>
                 <a href="#" class="instagram">Instagram</a>
                 <a href="#" class="x">X</a>
                 <a href="#" class="facebook">Facebook</a>

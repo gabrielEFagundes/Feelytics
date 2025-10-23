@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# python stuff (i hate that pycache)
+*.pyc
+__pycache__/
