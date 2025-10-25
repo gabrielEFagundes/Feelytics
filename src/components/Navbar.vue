@@ -59,7 +59,7 @@
     </div>
 </template>
 
-<style scoped>
+<style>
     .logo{
         transition: all 0.3s ease-in-out;
     }
