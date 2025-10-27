@@ -8,6 +8,11 @@ app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
+@api.route('/api/search', methods=['GET', 'POST'])
+class SearchResource(Resource):
+    def get(self):
+        return # TODO: find a way to return just the search value from frontend
+
 @api.route('/api/data/reddit', methods=['GET'])
 class RedditDataResource(Resource):
     def get(self):
