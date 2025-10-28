@@ -1,5 +1,4 @@
-from .redditClient import Client
-from .routes import requestSearch
+from redditClient import Client
 import json
 import asyncio # implement this after it's working synchronously
 
@@ -16,7 +15,7 @@ def getRedditData(topic):
     data = []
     comments = []
 
-    for i in sub.search(topic).top(limit=1):
+    for i in sub.search(topic, limit=1):
         data.append({
             "title": i.title,
             "author": i.author.name if i.author else "Unknown",
@@ -25,8 +24,8 @@ def getRedditData(topic):
         })
 
         if i.num_comments > 0:
-            i.comments.replace_more(limit=0)
-            for comm in i.comments.list()[:5]:
+            i.comments.replace_more(limit=1)
+            for comm in i.comments.list()[:25]:
                 cont = len(comments) + 1
                 name = f"comment{cont}"
                 comments.append({
