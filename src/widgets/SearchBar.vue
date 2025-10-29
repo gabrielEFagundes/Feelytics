@@ -1,6 +1,5 @@
 <script setup>
-    import { ref } from 'vue';
-    import axios from 'axios';
+    import { apiSearchRequest } from '../utils/data-analysis/general/apiSendingHook';
 
     const placeholders = [
         "What topic today?",
@@ -14,16 +13,8 @@
 
     const chosenValue = placeholders[placeholderValue];
 
-    const search = ref('');
-    const sendRequest = () => {
-        axios.post(`http://127.0.0.1:5000/api/data/reddit?query=${search.value}`,) // change this too when in production!
-        .then((res) => {
-            console.log("Successfully sent to endpoint! Response: \n" + res.data);
-        })
-        .catch((e) => {
-            console.error(e);
-        });
-    }
+    const { search, sendRequest } = apiSearchRequest()
+    
 </script>
 
 <template>
