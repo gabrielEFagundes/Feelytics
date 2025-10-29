@@ -13,4 +13,6 @@ export function apiSearchRequest(){
             console.error(e);
         });
     }
+
+    return { search, sendRequest };
 }
