@@ -13,8 +13,7 @@
 
     const chosenValue = placeholders[placeholderValue];
 
-    const { search, sendRequest } = apiSearchRequest()
-    
+    const { search, sendRequest } = apiSearchRequest();
 </script>
 
 <template>

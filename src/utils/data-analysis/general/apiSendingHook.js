@@ -8,6 +8,7 @@ export function apiSearchRequest(){
         axios.post(`http://127.0.0.1:5000/api/data/reddit?query=${search.value}`,) // change this too when in production!
         .then((res) => {
             console.log(res.data);
+            return res.data;
         })
         .catch((e) => {
             console.error(e);

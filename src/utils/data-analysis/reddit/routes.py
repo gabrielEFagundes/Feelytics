@@ -17,7 +17,7 @@ searchQuery = []
 @api.route('/api/data/reddit', methods=['GET', 'POST'])
 class RedditDataResource(Resource):
     def get(self):
-        return jsonify({ 'error': 'Sorry, you cannot make requisitions directly through the API, try out our API or use the platform!' })
+        return jsonify({ 'error': 'Sorry, you cannot make requisitions directly through the URL, try out our API or use the platform!' })
 
     def post(self):
         args = parser.parse_args()
