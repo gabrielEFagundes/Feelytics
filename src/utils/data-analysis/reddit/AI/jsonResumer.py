@@ -21,13 +21,13 @@ class FormattedJson(BaseModel):
     #top dashboards
     amount_of_relevant_posts_on_analysis: int
     topic_engajement_level_in_word: str
-    emoji_popular_opinion_about_topic: str
+    one_emoji_popular_opinion_about_topic: str
 
     #side dashboards
     number_of_searched_posts: int
 
     #general posts
-    three_similar_topics: list[str]
+    three_similar_topics_in_one_word: list[str]
     main_subreddit_about_topic: str
 
     resume_about_analysis_and_popular_opinion: str
@@ -37,7 +37,7 @@ def summarizeJson(jsonData):
 
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents=("Analyze this json: ", jsonData),
+        contents=("Analyze this json and replace what you found on the Formatted Json: ", jsonData),
         config={
             'response_mime_type': 'application/json',
             'response_schema': list[FormattedJson]

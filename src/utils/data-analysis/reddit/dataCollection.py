@@ -1,9 +1,5 @@
-# import sys
-
-# sys.path.insert(1, '../AI/')
-
 from redditClient import Client
-from jsonResumer import summarizeJson # not working yet
+from AI.jsonResumer import summarizeJson # not working yet
 import json
 import asyncio # implement this after it's working synchronously
 
