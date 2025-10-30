@@ -26,3 +26,6 @@ dist-ssr
 # python stuff (i hate that pycache)
 *.pyc
 __pycache__/
+
+# env
+.env

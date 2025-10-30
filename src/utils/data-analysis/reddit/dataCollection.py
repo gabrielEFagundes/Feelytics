@@ -1,4 +1,9 @@
+# import sys
+
+# sys.path.insert(1, '../AI/')
+
 from redditClient import Client
+from jsonResumer import summarizeJson # not working yet
 import json
 import asyncio # implement this after it's working synchronously
 
@@ -41,4 +46,4 @@ def getRedditData(topic):
 
 def turnDataIntoJson(data):
     jsObject = json.dumps(data)
-    return jsObject
+    return summarizeJson(jsObject)
