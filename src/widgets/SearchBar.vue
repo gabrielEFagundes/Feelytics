@@ -14,6 +14,8 @@
     const chosenValue = placeholders[placeholderValue];
 
     const { search, sendRequest } = apiSearchRequest();
+
+    export const finalResults = sendRequest[0];
 </script>
 
 <template>

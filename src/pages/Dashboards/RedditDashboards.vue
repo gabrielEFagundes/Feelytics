@@ -1,8 +1,10 @@
 <script setup>
     import Navbar from '../../components/Navbar.vue';
     import Footer from '../../components/Footer.vue';
-    import SearchBar from '../../widgets/SearchBar.vue';
+    import { SearchBar, finalResults } from '../../widgets/SearchBar.vue';
     import { BasicBoard, PostsBoard, AiResume } from './dashboardComponents';
+    
+    const results = finalResults;
 </script>
 
 <template>
