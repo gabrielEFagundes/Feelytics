@@ -5,7 +5,7 @@
         "What topic today?",
         "What you're thinking today?",
         "What would you like to know?",
-        "What do you say about 'Cute Puppies'?",
+        "Get ready for some data!",
         "Let's rock those ideas!",
         "Share your ideas!"
     ];
@@ -20,11 +20,11 @@
     <div class="flex flex-col items-center mt-[10rem]">
             <h1 class="text-[#FFA64D] text-6xl">Reddit</h1>
         </div>
-        <div class="mx-[20rem]">
+        <div class="lg:mx-[20rem]">
             <div class="mt-[5rem] flex flex-col">
-                <input type="text" :placeholder="chosenValue" class="bg-neutral-900 px-10 py-3 rounded-4xl focusOutline" v-model="search">
+                <input type="text" :placeholder="chosenValue" class="bg-neutral-900 px-10 py-3 rounded-4xl focusOutline text-sm lg:text-base" v-model="search">
                 <div class="flex flex-row-reverse">
-                    <button @click="sendRequest" class="relative bottom-9 right-4 text-neutral-500 btnFocus">-></button>
+                    <button @click="sendRequest" class="relative bottom-8.5 lg:bottom-9 right-4 text-neutral-500 btnFocus">-></button>
                 </div>
             </div>
         </div>

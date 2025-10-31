@@ -1,7 +1,7 @@
 from redditClient import Client
-from AI.jsonResumer import summarizeJson # not working yet
+from AI.jsonResumer import summarizeJson
 import json
-import asyncio # implement this after it's working synchronously
+import asyncio # on queue to implement, although it's extremely necessary
 
 def getRedditData(topic):
     client = Client(
@@ -16,7 +16,7 @@ def getRedditData(topic):
     data = []
     comments = []
 
-    for i in sub.search(topic, limit=1):
+    for i in sub.search(topic, limit=5):
         data.append({
             "title": i.title,
             "author": i.author.name if i.author else "Unknown",
@@ -25,7 +25,7 @@ def getRedditData(topic):
         })
 
         if i.num_comments > 0:
-            i.comments.replace_more(limit=1)
+            i.comments.replace_more(limit=10)
             for comm in i.comments.list()[:25]:
                 cont = len(comments) + 1
                 name = f"comment{cont}"
