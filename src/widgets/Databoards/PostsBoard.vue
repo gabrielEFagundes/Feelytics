@@ -3,12 +3,12 @@
         postTitle: String,
         postAuthor: String,
         postBody: String,
-        postScore: Number,
+        postScore: String,
     })
 </script>
 
 <template>
-    <div class="border border-2 border-[#FFA64D] rounded-2xl py-10 px-5 mb-5">
+    <div class="border border-2 border-[#FFA64D] rounded-2xl py-10 px-5">
         <p class="text-xl">{{ postTitle }}</p>
         <p class="text-sm mb-2">{{ postAuthor }}</p>
         <p class="text-neutral-400 mb-3">{{ postBody }}</p>
