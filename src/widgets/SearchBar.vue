@@ -39,7 +39,10 @@
                     <button @click="handleSearch" class="relative bottom-8.5 lg:bottom-9 right-4 text-neutral-500 btnFocus">-></button>
                 </div>
             </div>
-            <div v-if="loading" class="text-center">Now Loading...</div>
+            <div v-if="loading" class="text-center">
+                <div class="lds-ripple"><div></div><div></div></div>
+                <p>Hold your beer! We're fetching the latest data just for you...</p>
+            </div>
         </div>
 </template>
 
@@ -57,5 +60,57 @@
         color: #FFA64D;
         transition: 0.3s ease-in-out;
         cursor: pointer;
+    }
+
+    
+    .lds-ripple,
+    .lds-ripple div {
+        box-sizing: border-box;
+    }
+    .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+    }
+    .lds-ripple div {
+        position: absolute;
+        border: 4px solid #FFA64D;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+    .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+    }
+    @keyframes lds-ripple {
+        0% {
+            top: 36px;
+            left: 36px;
+            width: 8px;
+            height: 8px;
+            opacity: 0;
+        }
+        4.9% {
+            top: 36px;
+            left: 36px;
+            width: 8px;
+            height: 8px;
+            opacity: 0;
+        }
+        5% {
+            top: 36px;
+            left: 36px;
+            width: 8px;
+            height: 8px;
+            opacity: 1;
+        }
+        100% {
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            opacity: 0;
+        }
     }
 </style>

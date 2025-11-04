@@ -23,12 +23,10 @@ class FormattedJson(BaseModel):
     topic_engajement_level_in_word: str
     one_emoji_popular_opinion_about_topic: str
 
-    #side dashboards
-    number_of_searched_posts: int
-
     #general posts
     three_similar_topics_in_one_word: list[str]
     main_subreddit_about_topic: str
+    about_main_subreddit: str
 
     resume_about_analysis_and_popular_opinion: str
 

@@ -16,7 +16,7 @@
         </div>
         <div class="flex">
             <p class="mr-3">>_</p>
-            <p>{{ data }}</p>
+            <p class="text-neutral-400">{{ data }}</p>
         </div>
     </div>
 </template>

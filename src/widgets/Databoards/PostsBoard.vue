@@ -3,7 +3,7 @@
         postTitle: String,
         postAuthor: String,
         postBody: String,
-        postScore: String,
+        postScore: Number,
     })
 </script>
 
