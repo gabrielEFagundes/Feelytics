@@ -1,5 +1,6 @@
 from redditClient import Client
 from AI.jsonResumer import summarizeJson
+from flask import jsonify
 import json
 import asyncio # on queue to implement, although it's extremely necessary
 

@@ -21,7 +21,7 @@ class RedditDataResource(Resource):
 
     def post(self):
         args = parser.parse_args()
-        return turnDataIntoJson(getRedditData(request.args.get('query')))
+        return jsonify(turnDataIntoJson(getRedditData(request.args.get('query'))))
 
 if __name__ == '__main__':
     app.run(port=5000)

@@ -1,10 +1,17 @@
 <script setup>
     import Navbar from '../../components/Navbar.vue';
     import Footer from '../../components/Footer.vue';
-    import { SearchBar, finalResults } from '../../widgets/SearchBar.vue';
-    import { BasicBoard, PostsBoard, AiResume } from './dashboardComponents';
+    import { BasicBoard, PostsBoard, AiResume, SearchBar } from './dashboardComponents';
+    import { storeToRefs } from 'pinia';
+    import { useRedditStore } from '../../../stores/redditStore';
+
+    const redditStore = useRedditStore();
+
+    const { redditData } = storeToRefs(redditStore);
     
-    const results = finalResults;
+    if(redditData){
+        console.log(redditData);
+    }
 </script>
 
 <template>
@@ -13,6 +20,7 @@
     <main class="p-5 mb-[15rem]">
         <SearchBar />
         <div class="mt-[10rem] lg:mx-[10rem]">
+            <p class="mb-10" v-if="redditData && redditData.length > 0">{{ redditData[0].most_scored_post_title }}</p>
             <div class="flex flex-col lg:flex-row gap-4 mb-[10rem] lg:mb-10 justify-evenly">
                 <BasicBoard title="Amount of relevant posts found:" data="81 posts" />
                 <BasicBoard title="People engagement about the topic:" data="Very High" />

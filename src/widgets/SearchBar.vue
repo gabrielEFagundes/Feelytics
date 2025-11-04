@@ -1,5 +1,6 @@
 <script setup>
     import { apiSearchRequest } from '../utils/data-analysis/general/apiSendingHook';
+    import { useRedditStore } from '../../stores/redditStore';
 
     const placeholders = [
         "What topic today?",
@@ -12,10 +13,19 @@
     const placeholderValue = Math.floor(Math.random() * placeholders.length);
 
     const chosenValue = placeholders[placeholderValue];
+    const redditStore = useRedditStore();
 
-    const { search, sendRequest } = apiSearchRequest();
+    const { search, sendRequest, loading } = apiSearchRequest();
 
-    export const finalResults = sendRequest[0];
+    const handleSearch = async () => {
+        const data = await sendRequest()
+
+        if(data != null && data.length > 0){
+            const cleanData = JSON.parse(data);
+
+            redditStore.setRedditData(cleanData);
+        }
+    }
 </script>
 
 <template>
@@ -26,9 +36,10 @@
             <div class="mt-[5rem] flex flex-col">
                 <input type="text" :placeholder="chosenValue" class="bg-neutral-900 px-10 py-3 rounded-4xl focusOutline text-sm lg:text-base" v-model="search">
                 <div class="flex flex-row-reverse">
-                    <button @click="sendRequest" class="relative bottom-8.5 lg:bottom-9 right-4 text-neutral-500 btnFocus">-></button>
+                    <button @click="handleSearch" class="relative bottom-8.5 lg:bottom-9 right-4 text-neutral-500 btnFocus">-></button>
                 </div>
             </div>
+            <div v-if="loading" class="text-center">Now Loading...</div>
         </div>
 </template>
 
