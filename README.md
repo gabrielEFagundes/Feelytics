@@ -22,7 +22,7 @@ Our platform offers a variety of different social media data, here are some exam
 - Reddit
 
 > [!NOTE]
-> As for now, Reddit is the only platform available, unfortunately it's a bit harder to have access to public data using official APIs.
+> As for now, Reddit is the only platform available, unfortunately it's quite hard to have access to public data using official APIs on other social medias.
 
 - 4Chan
 - X (Twitter)
@@ -73,3 +73,4 @@ This is a Open-Source project, and under the MIT license, which means you can co
 
 > [!WARNING]
 >  If you are going to use one of our data API, we recommend you to generate your own api token and provide it to our application, so you can get the data from our application without having to use the social media API directly.
+>  As you know, reddit is the only available social media, for collecting data from it, follow this tutorial: [Creating a Reddit data collection API](#)
