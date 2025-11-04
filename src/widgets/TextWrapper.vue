@@ -13,10 +13,6 @@
 </template>
 
 <style>
-    .boxShadow{
-        box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 70px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    }
-
     .whiteSpace{
         white-space: pre-line;
     }

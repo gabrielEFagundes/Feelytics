@@ -19,7 +19,7 @@
         <div class="lg:hidden" id="menu">
             <div class="bg-black boxShadow absolute ml-[-5rem] mt-2 p-4 rounded-xl">
                 <ul class="flex flex-col gap-3">
-                    <a href="#">Reddit</a>
+                    <a href="/dashboards/reddit">Reddit</a>
                     <a href="#">Instagram</a>
                     <a href="#">X</a>
                     <a href="#">Facebook</a>

@@ -20,6 +20,10 @@ Dashboards, researches, thoughts, feelings, you can find all of this <b>here</b>
 Our platform offers a variety of different social media data, here are some examples:
 
 - Reddit
+
+> [!NOTE]
+> As for now, Reddit is the only platform available, unfortunately it's a bit harder to have access to public data using official APIs.
+
 - 4Chan
 - X (Twitter)
 - Instagram
@@ -32,11 +36,10 @@ Our platform offers a variety of different social media data, here are some exam
 - LINE
 - WeChat
 
-You can find not only data, but also **dashboards** that shows all the data in a more visual way.
+Here, Dashboards are available to show data in a more visual way :)
 
-`The data is fetched and formatted by AI, so it's easier to show them to the user.`
-
-<br>
+> [!IMPORTANT]
+> The data is fetched and formatted by AI, so it's easier to show them to the user.
 
 You can also search for specific topics on different social medias, to know what people are thinking about that topic.
 

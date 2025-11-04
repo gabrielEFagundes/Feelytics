@@ -4,7 +4,7 @@ import Home from '../pages/Home/Home.vue';
 import PrivacyPol from "../pages/PrivacyPolicy/PrivacyPol.vue";
 import Authentication from "../pages/Authentication/Auth.vue";
 import TermsAndConditions from "../pages/Terms&Conditions/TermsAndConditions.vue";
-import RedditDashboards from "../pages/RedditDashboards/RedditDashboards.vue";
+import RedditDashboards from "../pages/Dashboards/RedditDashboards.vue";
 
 const routes = [
     { path: '/', component: Home },
