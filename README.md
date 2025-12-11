@@ -8,7 +8,7 @@ A brazillian platform that joins data all in <b>one</b> place.
 
 Dashboards, researches, thoughts, feelings, you can find all of this <b>here</b>
 
-<img src="https://img.shields.io/badge/Status-In_Development-057CDC?logo=devbox&logoColor=white">
+<img src="https://img.shields.io/badge/Status-v1.0.0-057CDC?logo=devbox&logoColor=white">
 <img src="https://img.shields.io/badge/PoweredBy-Vite-AC66ED?logo=vite&logoColor=white">
 <img src="https://img.shields.io/badge/Framework-Vue.js-4FC08D?logo=vuedotjs&logoColor=white">
 <img src="https://img.shields.io/badge/Data%20Analysis-Python-3776AB?logo=python&logoColor=white">
