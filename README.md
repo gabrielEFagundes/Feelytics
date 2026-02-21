@@ -23,6 +23,8 @@ Our platform offers a variety of different social media data, here are some exam
 
 > [!NOTE]
 > As for now, Reddit is the only platform available, unfortunately it's quite hard to have access to public data using official APIs on other social medias.
+>
+> The social medias above are currently being studied and we're trying to negotiate with some of them for access to public data. Don't expect this to be quick.
 
 - 4Chan
 - X (Twitter)
@@ -44,6 +46,11 @@ Here, Dashboards are available to show data in a more visual way :)
 You can also search for specific topics on different social medias, to know what people are thinking about that topic.
 
 We will also develop our own API for data collection, to make it easier for people to fetch data from social medias.
+
+> [!WARNING]
+> We do not keep collected data from social medias, everything you see is fetched and shown once, no data is stored.
+> 
+> We may only use your searches for monthly researches of our own.
 
 ## **Contributors**
 
